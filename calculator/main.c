@@ -41,7 +41,7 @@ int main(int argc, char *argv[]){
       result = divide(a, b);
       break;
     default:
-      printf("Invalid operands");
+      printf("Invalid operands\n");
       return 1;
   }
   if (verbose) {

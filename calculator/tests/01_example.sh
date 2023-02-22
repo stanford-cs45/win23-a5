@@ -29,3 +29,21 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
   exit 1
 fi
+
+# Test 04: Ensure program runs on operand
+if [[ $($CALCULATOR 1 / 1) -ne 1 ]]; then 
+  echo 'ERROR! A valid run of the calculator (1 / 1) failed to produce 1 as an output!'
+  exit 1
+fi
+
+# Test 04: Ensure program runs on operand
+if [[ $($CALCULATOR 1 - 1) -ne 0 ]]; then 
+  echo 'ERROR! A valid run of the calculator (1 - 1) failed to produce 0 as an output!'
+  exit 1
+fi
+
+# Test 05: Ensure program runs on operand
+if [[ $($CALCULATOR 1 / 2) -ne 0 ]]; then 
+  echo 'ERROR! A valid run of the calculator (1 / 2) failed to produce 0 as an output!'
+  exit 1
+fi
