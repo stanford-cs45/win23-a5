@@ -24,7 +24,7 @@ if [[ $($CALCULATOR 1 + 1) -ne 2 ]]; then  # If the output of the program is not
   exit 1
 fi
 
-# Test 03: Ensure program errors with an invalid operand
+# Test 03: Ensure program errors with an invalid operands
 if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. success)...
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
   exit 1
