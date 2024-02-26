@@ -24,8 +24,27 @@ if [[ $($CALCULATOR 1 + 1) -ne 2 ]]; then  # If the output of the program is not
   exit 1
 fi
 
+
 # Test 03: Ensure program errors with an invalid operand
 if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. success)...
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
+  exit 1
+fi
+
+# Test 04: Ensure subtraction works
+if [[ $($CALCULATOR 5 - 3) -ne 2 ]]; then
+  echo 'ERROR! Subtraction (5 - 3) failed to produce 2 as an output!'
+  exit 1
+fi
+
+# Test 05: Ensure multiplication works
+if [[ $($CALCULATOR 2 '*' 3) -ne 6 ]]; then 
+  echo 'ERROR! Multiplication (2 * 3) failed to produce 6 as an output!'
+  exit 1
+fi
+
+# Test 06: Ensure division works
+if [[ $($CALCULATOR 6 / 3) -ne 2 ]]; then
+  echo 'ERROR! Division (6 / 3) failed to produce 2 as an output!'
   exit 1
 fi
