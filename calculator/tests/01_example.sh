@@ -30,8 +30,8 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   exit 1
 fi
 
-# Test 04: Ensure division by zero produces an error
-if $CALCULATOR 1 / 0; then  # If the return code of $PROGRAM is zero (i.e. success)...
+# Test 04: Ensure division works
+if [[ $($CALCULATOR -5 / 7) -ne -1 ]]; then  # If the return code of $PROGRAM is zero (i.e. success)...
   echo 'ERROR! Division by zero (1 / 0) should produce an error!'
   exit 1
 fi
